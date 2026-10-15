@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English 11: American Literature | Day 22: Allegorical Reflection: History as a Mirror</title>
+  <style>
+:root {
+  --primary: #15803d;
+  --primary-dark: #166534;
+  --primary-light: #f0fdf4;
+  --bg-main: #f8fafc;
+  --card-bg: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --border: #cbd5e1;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-main);
+  margin: 0;
+  padding: 20px;
+  color: var(--text-dark);
+}
+
+.container { max-width: 980px; margin: 0 auto; }
+
+.header-card {
+  background: var(--card-bg);
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  border-top: 5px solid var(--primary);
+}
+
+.header-flex { display: flex; justify-content: space-between; align-items: center; }
+.header-left { display: flex; align-items: center; gap: 18px; }
+.logo-box { width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; }
+.logo-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+.stamp-container { width: 110px; height: 110px; position: relative; }
+.stamp-photo {
+  position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 60px; height: 60px;
+  border-radius: 50%; object-fit: cover;
+  z-index: 1;
+}
+.stamp-svg {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.nav-tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+.tab-btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  font-weight: bold;
+  font-size: 0.95em;
+  cursor: pointer;
+  color: #334155;
+}
+.tab-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+
+.card {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.bellringer-box {
+  background: var(--primary-light);
+  border-left: 4px solid var(--primary);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deck-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.std-badge {
+  background: #dcfce7;
+  color: var(--primary-dark);
+  font-size: 0.78em;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #bbf7d0;
+}
+
+.slide-stage {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  min-height: 440px;
+}
+
+.slide { display: none; }
+.slide.active { display: block; }
+
+.slide-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.slide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.slide-visual-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.callout-box {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: #f0fdf4;
+  border-left: 4px solid var(--primary);
+}
+
+.deck-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.ctrl-btn {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.ctrl-btn:disabled { background: #94a3b8; }
+
+.resource-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkpoint-intro { margin: 8px 0 20px; color: var(--text-muted); line-height: 1.55; }
+.checkpoint-progress {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 18px 0 24px;
+}
+.progress-copy { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 9px; font-size: 0.92em; }
+.progress-copy strong { color: var(--primary-dark); }
+.progress-track { height: 9px; overflow: hidden; border-radius: 99px; background: #e2e8f0; }
+.progress-fill { width: 0; height: 100%; background: var(--primary); border-radius: inherit; transition: width 180ms ease; }
+.form-group {
+  margin: 0 0 18px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #dbe4ee;
+  border-left: 4px solid #86c99b;
+  border-radius: 10px;
+  box-shadow: 0 2px 7px rgba(15, 23, 42, 0.035);
+}
+.form-group.answered { border-left-color: var(--primary); }
+.question-heading { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.question-number {
+  display: inline-flex;
+  flex: 0 0 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 0.86em;
+  font-weight: 700;
+}
+.question-title { margin: 2px 0 0; line-height: 1.45; font-size: 1.02em; }
+.required-note { margin-left: 5px; color: #b42318; font-size: 0.8em; font-weight: 600; }
+.field-hint { margin: -5px 0 12px 42px; color: var(--text-muted); font-size: 0.88em; line-height: 1.45; }
+.answer-area { margin-left: 42px; }
+.answer-control {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #b8c5d3;
+  border-radius: 7px;
+  background: #ffffff;
+  color: var(--text-dark);
+  font: inherit;
+}
+.answer-control:focus { outline: 3px solid rgba(21, 128, 61, 0.18); border-color: var(--primary); }
+textarea.answer-control { min-height: 120px; resize: vertical; line-height: 1.55; }
+.writing-prompt textarea.answer-control { min-height: 155px; }
+.choice-list { display: grid; gap: 9px; }
+.choice-list--binary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.choice-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 13px;
+  border: 1px solid #dbe4ee;
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 1.45;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+.choice-option:hover { border-color: #86c99b; background: #f7fcf8; }
+.choice-option.selected { border-color: var(--primary); background: var(--primary-light); }
+.choice-option input { flex: 0 0 auto; width: auto; margin: 3px 0 0; accent-color: var(--primary); }
+.response-meta { display: flex; justify-content: space-between; gap: 8px; margin-top: 7px; color: var(--text-muted); font-size: 0.8em; }
+.response-meta .word-count { font-variant-numeric: tabular-nums; }
+.standard-panel { margin-bottom: 16px; padding: 16px; border: 1px solid #bbf7d0; border-radius: 10px; background: var(--primary-light); }
+.standard-panel .std-badge { display: inline-block; margin-bottom: 8px; }
+.standard-panel .i-can { margin: 0 0 10px; font-weight: 600; line-height: 1.5; }
+.standard-panel ul { margin: 6px 0 0; padding-left: 20px; line-height: 1.5; }
+.standard-panel .panel-label { margin: 0; color: var(--primary-dark); font-size: 0.8em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+.level-title { display: block; font-weight: 700; }
+.level-desc { display: block; color: var(--text-muted); font-size: 0.92em; }
+.evidence-label { margin: 16px 0 6px; font-weight: 700; }
+.resource-tag { display: inline-block; margin-bottom: 4px; padding: 2px 8px; border-radius: 99px; background: #dcfce7; color: var(--primary-dark); font-size: 0.72em; font-weight: 700; }
+.resource-card.has-detail { display: block; }
+.resource-card.has-detail summary { cursor: pointer; font-weight: 700; }
+.gen-table { width: 100%; margin-top: 12px; border-collapse: collapse; font-size: 0.92em; }
+.gen-table th, .gen-table td { padding: 8px 10px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+.gen-table th { background: var(--primary-light); }
+.gen-note { color: var(--text-muted); font-style: italic; }
+.gen-list { line-height: 1.6; padding-left: 20px; }
+.checkpoint-actions { margin-top: 24px; }
+.print-note { margin: 10px 0 0; text-align: center; color: var(--text-muted); font-size: 0.86em; }
+@media (max-width: 640px) {
+  .form-group { padding: 16px 13px; }
+  .answer-area { margin-left: 0; }
+  .field-hint { margin-left: 0; }
+}
+@media print {
+  body { padding: 0; background: #ffffff; }
+  .container { max-width: none; }
+  .header-card, .nav-tabs, #deck-tab, #res-tab, .checkpoint-progress, .checkpoint-actions { display: none !important; }
+  #form-tab { display: block !important; margin: 0; padding: 0; box-shadow: none; }
+  #form-tab > h3 { margin-top: 0; }
+  .form-group { break-inside: avoid; box-shadow: none; border-color: #aab4bf; }
+  .answer-control { border-color: #7c8794; }
+  textarea.answer-control { min-height: 90px; }
+}
+
+.submit-btn {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  padding: 14px;
+  font-size: 1.05em;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.muted { color: var(--text-muted); }
+.italic { font-style: italic; }
+.subtitle { color: var(--text-muted); }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header-card">
+    <div class="header-flex">
+      <div class="header-left">
+        <div class="logo-box">
+          <img src="chisholm_logo.png" alt="Chisholm Logo" onerror="this.style.display='none'" />
+        </div>
+        <div>
+          <h2>English 11: American Literature</h2>
+          <p class="subtitle">Day 22: Allegorical Reflection: History as a Mirror</p>
+        </div>
+      </div>
+
+      <div class="stamp-container">
+        <img class="stamp-photo" src="boehm_photo.jpg" alt="Instructor Photo" onerror="this.style.display='none'" />
+        <img class="stamp-svg" src="boehm-stamp.svg" alt="Classroom Stamp" onerror="this.style.display='none'" />
+      </div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="switchTab('deck')">Deck</button>
+    <button class="tab-btn" onclick="switchTab('res')">Resource Hub</button>
+    <button class="tab-btn" onclick="switchTab('form')">Student Work Checkpoint</button>
+  </div>
+
+  <!-- TAB: DECK -->
+  <div id="deck-tab" class="card tab-content active">
+    <div class="bellringer-box">
+      <div>
+        <strong>Daily Bellringer Writing Prompt</strong>
+        <p id="bellringer-display" class="italic">Loading prompt...</p>
+      </div>
+      <button class="ctrl-btn" onclick="randomizeBellringer()">Shuffle</button>
+    </div>
+
+    <div class="deck-header">
+      <h3>Unit 5: The Voice of Revolution</h3>
+      <span id="slide-tracker" class="std-badge">Slide 1 of 12</span>
+    </div>
+
+    <div id="slide-stage" class="slide-stage">
+      <!-- Slides injected by script.js -->
+    </div>
+
+    <div class="deck-controls">
+      <button class="ctrl-btn" id="prev-btn" onclick="moveSlide(-1)" disabled>Previous</button>
+      <button class="ctrl-btn" id="next-btn" onclick="moveSlide(1)">Next</button>
+    </div>
+  </div>
+
+  <!-- TAB: RESOURCE HUB -->
+  <div id="res-tab" class="card tab-content">
+    <h3>Lesson Resource & Reference Hub</h3>
+    <p class="muted">Access official course references below.</p>
+    <div id="resource-list">
+      <!-- Resources injected by script.js -->
+    </div>
+  </div>
+
+  <!-- TAB: STUDENT WORK CHECKPOINT -->
+  <div id="form-tab" class="card tab-content">
+    <h3>Student Work Checkpoint & Reflection</h3>
+    <p class="checkpoint-intro">Show what you understand so far. Choose an answer, mark every option that applies, or write in your own words. Your progress updates as you work on this page.</p>
+    <div class="checkpoint-progress" id="checkpoint-progress" aria-live="polite">
+      <div class="progress-copy"><strong id="progress-label">0 of 0 answered</strong><span id="progress-message">Start anywhere</span></div>
+      <div class="progress-track" role="progressbar" aria-label="Checkpoint completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+    <form id="checkpoint-form" onsubmit="event.preventDefault(); window.print();">
+      <!-- Dynamic form fields injected by script.js -->
+      <div class="checkpoint-actions">
+        <button type="submit" class="submit-btn">Print checkpoint</button>
+        <p class="print-note">Review your responses, then print and turn in to the Red Basket.</p>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<script>
+let currentSlide = 1;
+let totalSlides = 1;
+let bellringers = [];
+
+// Stock image pool for default visual slides
+const stockImagePool = [
+  'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=300&q=80', // Turtle / Nature
+  'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=300&q=80', // Water / Earth-Diver
+  'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=300&q=80', // Ecology / Forest
+  'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80', // Campfire / Orality
+  'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=300&q=80', // Literature / History
+  'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=300&q=80'  // Writing Workshop
+];
+
+// Emoji fallback pool
+const iconPool = ['🐢', '🌊', '🌱', '🗣️', '☯️', '📝'];
+
+function renderSlides(slides) {
+  const stage = document.getElementById('slide-stage');
+  stage.innerHTML = '';
+
+  slides.forEach((slide, index) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'slide' + (index === 0 ? ' active' : '');
+    wrapper.id = `slide-${index + 1}`;
+
+    // Priority 1: slide.image OR Stock Web Image
+    const imageUrl = slide.image || stockImagePool[index % stockImagePool.length];
+    // Fallback: slide.icon OR Emoji Pool
+    const fallbackEmoji = slide.icon || iconPool[index % iconPool.length];
+
+    const visualMediaHTML = `
+      <img src="${imageUrl}" 
+           alt="${slide.title}" 
+           style="width:110px;height:110px;object-fit:cover;border-radius:50%;border:3px solid var(--primary);" 
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <span style="font-size: 2.8em; display: none; margin-bottom: 8px;">${fallbackEmoji}</span>
+    `;
+
+    wrapper.innerHTML = `
+      <div class="slide-header">
+        <h3 class="slide-title">${slide.title}</h3>
+        <span class="std-badge">${slide.standard || ''}</span>
+      </div>
+      <div class="slide-grid">
+        <div class="slide-body">
+          <ul>
+            ${(slide.bullets || []).map(b => `<li>${b}</li>`).join('')}
+          </ul>
+          ${slide.callout ? `<div class="callout-box"><strong style="color: var(--primary-dark);">Key Takeaway:</strong> ${slide.callout}</div>` : ''}
+        </div>
+        <div class="slide-visual-card">
+          ${visualMediaHTML}
+          ${slide.visual_caption ? `<small style="color: var(--text-muted); display: block; font-size: 0.82em; margin-top: 6px;">${slide.visual_caption}</small>` : ''}
+        </div>
+      </div>
+    `;
+    stage.appendChild(wrapper);
+  });
+}
+function initLesson(data) {
+  bellringers = data.bellringers || [];
+  totalSlides = (data.slides || []).length || 1;
+
+  document.getElementById('slide-tracker').innerText = `Slide 1 of ${totalSlides}`;
+
+  renderSlides(data.slides || []);
+  renderResources(data.resources || []);
+  renderForm(data.form || []);
+
+  randomizeBellringer();
+}
+
+function randomizeBellringer() {
+  if (!bellringers.length) return;
+  const idx = Math.floor(Math.random() * bellringers.length);
+  document.getElementById('bellringer-display').innerText = bellringers[idx];
+}
+
+function moveSlide(dir) {
+  const newSlide = currentSlide + dir;
+  if (newSlide < 1 || newSlide > totalSlides) return;
+
+  document.getElementById(`slide-${currentSlide}`).classList.remove('active');
+  currentSlide = newSlide;
+  document.getElementById(`slide-${currentSlide}`).classList.add('active');
+
+  document.getElementById('slide-tracker').innerText = `Slide ${currentSlide} of ${totalSlides}`;
+  document.getElementById('prev-btn').disabled = currentSlide === 1;
+  document.getElementById('next-btn').disabled = currentSlide === totalSlides;
+}
+
+function renderResources(resources) {
+  const container = document.getElementById('resource-list');
+  container.innerHTML = '';
+
+  let resourceList = [];
+
+  if (Array.isArray(resources)) {
+    resourceList = resources;
+  } else if (resources && typeof resources === 'object') {
+    if (Array.isArray(resources.buttons)) {
+      resourceList = resources.buttons;
+    } else if (Array.isArray(resources.files)) {
+      resourceList = resources.files;
+    } else if (Array.isArray(resources.items)) {
+      resourceList = resources.items;
+    } else if (resources.file || resources.link || resources.url) {
+      resourceList = [resources];
+    }
+  }
+
+  if (!resourceList.length && resources && typeof resources === 'object' && resources.title && (resources.file || resources.link || resources.url)) {
+    resourceList = [resources];
+  }
+
+  resourceList.forEach(res => {
+    const card = document.createElement('div');
+    card.className = 'resource-card';
+
+    if (typeof res === 'string') {
+      const cleanText = res.trim();
+      const isFile = /\.(pdf|docx?|pptx?|xlsx?)$/i.test(cleanText);
+      if (!isFile) return;
+
+      const label = cleanText.split('/').pop();
+      card.innerHTML = `
+        <div>
+          <strong>${label}</strong><br/>
+          <small>Repository file</small>
+        </div>
+        <a href="${cleanText}" target="_blank" rel="noopener noreferrer" class="ctrl-btn">Open Resource</a>
+      `;
+      container.appendChild(card);
+      return;
+    }
+
+    const resourceUrl = res.file || res.link || res.url || res.href || '#';
+    const resourceTitle = res.title || res.name || res.label || 'Resource Item';
+    const resourceDescription = res.description || res.summary || '';
+    const fileName = resourceUrl && typeof resourceUrl === 'string' ? resourceUrl.split('/').pop() : '';
+
+    if (res.html) {
+      card.classList.add('has-detail');
+      card.innerHTML = `
+        ${res.tag ? `<span class="resource-tag">${res.tag}</span>` : ''}
+        <details>
+          <summary>${resourceTitle}</summary>
+          <p class="muted">${resourceDescription}</p>
+          ${res.html}
+        </details>
+      `;
+      container.appendChild(card);
+      return;
+    }
+
+    card.innerHTML = `
+      <div>
+        ${res.tag ? `<span class="resource-tag">${res.tag}</span><br/>` : ''}
+        <strong>${resourceTitle || fileName || 'Resource Item'}</strong><br/>
+        <small>${resourceDescription}</small>
+      </div>
+      ${resourceUrl && resourceUrl !== '#' ? `<a href="${resourceUrl}" target="_blank" rel="noopener noreferrer" class="ctrl-btn">Open Resource</a>` : ''}
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderForm(fields) {
+  const form = document.getElementById('checkpoint-form');
+  const actions = form.querySelector('.checkpoint-actions');
+  form.innerHTML = '';
+
+  const fieldList = Array.isArray(fields) ? fields : [];
+
+  fieldList.forEach((field, index) => {
+    const group = document.createElement('div');
+    group.className = 'form-group';
+    const label = field.label || field.prompt || `Question ${index + 1}`;
+    const id = `field_${(field.field_id || index + 1).toString().replace(/\s+/g, '_').toLowerCase()}`;
+    const heading = document.createElement('div');
+    heading.className = 'question-heading';
+    const number = document.createElement('span');
+    number.className = 'question-number';
+    number.textContent = String(index + 1);
+    number.setAttribute('aria-hidden', 'true');
+    const title = document.createElement('h4');
+    title.className = 'question-title';
+    title.id = `${id}_label`;
+    title.textContent = label;
+    if (field.required) {
+      const required = document.createElement('span');
+      required.className = 'required-note';
+      required.textContent = 'Required';
+      title.appendChild(required);
+    }
+    heading.append(number, title);
+    group.appendChild(heading);
+
+    const hintText = field.help_text || field.hint || (field.type === 'multiple_choice' ? 'Choose one answer.' :
+      field.type === 'self_assessment' ? 'Read the standard, then choose the level that honestly matches what you can do right now.' :
+      field.type === 'true_false' ? 'Select true or false.' :
+      ['short_answer', 'short_text', 'text', 'long_text', 'quote_citation', 'reflection'].includes(field.type) ? 'Write a response in your own words.' : '');
+    if (hintText) {
+      const hint = document.createElement('p');
+      hint.className = 'field-hint';
+      hint.textContent = hintText;
+      group.appendChild(hint);
+    }
+
+    const answerArea = document.createElement('div');
+    answerArea.className = 'answer-area';
+    const options = field.type === 'true_false' ? ['True', 'False'] : (Array.isArray(field.options) ? field.options : []);
+    const required = Boolean(field.required);
+
+    if (field.type === 'self_assessment') {
+      const panel = document.createElement('div');
+      panel.className = 'standard-panel';
+      const badge = document.createElement('span');
+      badge.className = 'std-badge';
+      badge.textContent = `Standard ${field.standard}${field.standard_title ? ': ' + field.standard_title : ''}`;
+      const iCan = document.createElement('p');
+      iCan.className = 'i-can';
+      iCan.textContent = field.i_can || '';
+      panel.append(badge, iCan);
+      if (Array.isArray(field.look_fors) && field.look_fors.length) {
+        const lookLabel = document.createElement('p');
+        lookLabel.className = 'panel-label';
+        lookLabel.textContent = 'Mastery looks like';
+        const ul = document.createElement('ul');
+        field.look_fors.forEach(text => {
+          const li = document.createElement('li');
+          li.textContent = text;
+          ul.appendChild(li);
+        });
+        panel.append(lookLabel, ul);
+      }
+      answerArea.appendChild(panel);
+
+      const list = document.createElement('div');
+      list.className = 'choice-list';
+      list.setAttribute('role', 'radiogroup');
+      list.setAttribute('aria-labelledby', title.id);
+      (field.levels || []).forEach(level => {
+        const choice = document.createElement('label');
+        choice.className = 'choice-option';
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = id;
+        input.value = level.title;
+        input.required = required;
+        const text = document.createElement('span');
+        const levelTitle = document.createElement('span');
+        levelTitle.className = 'level-title';
+        levelTitle.textContent = level.title;
+        const levelDesc = document.createElement('span');
+        levelDesc.className = 'level-desc';
+        levelDesc.textContent = level.desc;
+        text.append(levelTitle, levelDesc);
+        choice.append(input, text);
+        list.appendChild(choice);
+      });
+      answerArea.appendChild(list);
+
+      const evidenceLabel = document.createElement('p');
+      evidenceLabel.className = 'evidence-label';
+      evidenceLabel.id = `${id}_evidence_label`;
+      evidenceLabel.textContent = field.prompt || 'Show your evidence';
+      const evidence = document.createElement('textarea');
+      evidence.className = 'answer-control';
+      evidence.id = `${id}_evidence`;
+      evidence.name = `${id}_evidence`;
+      evidence.rows = 4;
+      evidence.setAttribute('aria-labelledby', evidenceLabel.id);
+      evidence.placeholder = 'Explain your level with a specific example…';
+      answerArea.append(evidenceLabel, evidence);
+      if (field.evidence_hint) {
+        const meta = document.createElement('div');
+        meta.className = 'response-meta';
+        meta.textContent = field.evidence_hint;
+        answerArea.appendChild(meta);
+      }
+    } else if (['multiple_choice', 'true_false', 'checkbox', 'checkbox_group', 'multi_select'].includes(field.type)) {
+      const list = document.createElement('div');
+      list.className = 'choice-list';
+      list.setAttribute('role', 'group');
+      list.setAttribute('aria-labelledby', title.id);
+      if (field.type === 'true_false') list.classList.add('choice-list--binary');
+      options.forEach((option, optionIndex) => {
+        const choice = document.createElement('label');
+        choice.className = 'choice-option';
+        const input = document.createElement('input');
+        const multiple = ['checkbox', 'checkbox_group', 'multi_select'].includes(field.type);
+        input.type = multiple ? 'checkbox' : 'radio';
+        input.name = multiple ? `${id}_${optionIndex}` : id;
+        input.value = option;
+        input.required = required && !multiple;
+        choice.append(input, document.createTextNode(option));
+        list.appendChild(choice);
+      });
+      answerArea.appendChild(list);
+    } else if (['rating_scale', 'select_rubric'].includes(field.type)) {
+      const select = document.createElement('select');
+      select.className = 'answer-control';
+      select.id = id;
+      select.setAttribute('aria-labelledby', title.id);
+      select.required = required;
+      const placeholder = document.createElement('option');
+      placeholder.value = '';
+      placeholder.textContent = field.type === 'select_rubric' ? 'Choose a benchmark level' : 'Choose an answer';
+      placeholder.disabled = true;
+      placeholder.selected = true;
+      select.appendChild(placeholder);
+      options.forEach(option => {
+        const item = document.createElement('option');
+        item.value = option;
+        item.textContent = option;
+        select.appendChild(item);
+      });
+      answerArea.appendChild(select);
+    } else if (['short_answer', 'short_text', 'text', 'long_text', 'quote_citation', 'reflection'].includes(field.type)) {
+      const textarea = document.createElement('textarea');
+      textarea.className = 'answer-control';
+      textarea.id = id;
+      textarea.name = id;
+      textarea.setAttribute('aria-labelledby', title.id);
+      textarea.required = required;
+      textarea.placeholder = field.placeholder || (field.type === 'short_answer' || field.type === 'short_text' || field.type === 'text' ? 'Type your response here…' : 'Develop your response here…');
+      if (['long_text', 'quote_citation', 'reflection'].includes(field.type)) {
+        group.classList.add('writing-prompt');
+      } else {
+        textarea.rows = 3;
+      }
+      answerArea.appendChild(textarea);
+      const meta = document.createElement('div');
+      meta.className = 'response-meta';
+      const guidance = document.createElement('span');
+      guidance.textContent = field.type === 'quote_citation' ? 'Include a specific detail or quotation when you can.' : 'A complete thought is a good place to start.';
+      const count = document.createElement('span');
+      count.className = 'word-count';
+      count.textContent = '0 words';
+      meta.append(guidance, count);
+      answerArea.appendChild(meta);
+      textarea.addEventListener('input', () => {
+        const wordCount = textarea.value.trim() ? textarea.value.trim().split(/\s+/).length : 0;
+        count.textContent = `${wordCount} ${wordCount === 1 ? 'word' : 'words'}`;
+      });
+    } else if (field.type === 'date') {
+      const input = document.createElement('input');
+      input.className = 'answer-control';
+      input.type = 'date';
+      input.id = id;
+      input.name = id;
+      input.setAttribute('aria-labelledby', title.id);
+      input.required = required;
+      answerArea.appendChild(input);
+    } else {
+      const input = document.createElement('input');
+      input.className = 'answer-control';
+      input.type = 'text';
+      input.id = id;
+      input.name = id;
+      input.setAttribute('aria-labelledby', title.id);
+      input.required = required;
+      input.placeholder = field.placeholder || 'Type your response here…';
+      answerArea.appendChild(input);
+    }
+
+    group.appendChild(answerArea);
+    form.appendChild(group);
+  });
+
+  if (actions) form.appendChild(actions);
+  form.oninput = updateCheckpointProgress;
+  form.onchange = updateCheckpointProgress;
+  updateCheckpointProgress();
+}
+
+function updateCheckpointProgress() {
+  const form = document.getElementById('checkpoint-form');
+  const groups = Array.from(form.querySelectorAll('.form-group'));
+  const answered = groups.filter(group => {
+    const controls = Array.from(group.querySelectorAll('input, textarea, select'));
+    return controls.some(control => control.type === 'checkbox' || control.type === 'radio' ? control.checked : Boolean(control.value.trim()));
+  }).length;
+  const percent = groups.length ? Math.round((answered / groups.length) * 100) : 0;
+  document.getElementById('progress-label').textContent = `${answered} of ${groups.length} answered`;
+  document.getElementById('progress-message').textContent = percent === 100 ? 'Ready to print!' : answered ? 'Keep going—you’re making progress.' : 'Start anywhere';
+  document.getElementById('progress-fill').style.width = `${percent}%`;
+  document.querySelector('.progress-track').setAttribute('aria-valuenow', String(percent));
+  groups.forEach(group => {
+    group.querySelectorAll('.choice-option').forEach(choice => {
+      const input = choice.querySelector('input');
+      choice.classList.toggle('selected', input.checked);
+    });
+    const hasAnswer = Array.from(group.querySelectorAll('input, textarea, select')).some(control =>
+      control.type === 'checkbox' || control.type === 'radio' ? control.checked : Boolean(control.value.trim()));
+    group.classList.toggle('answered', hasAnswer);
+  });
+}
+
+function switchTab(key) {
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+
+  if (key === 'deck') {
+    document.querySelectorAll('.tab-btn')[0].classList.add('active');
+    document.getElementById('deck-tab').classList.add('active');
+  } else if (key === 'res') {
+    document.querySelectorAll('.tab-btn')[1].classList.add('active');
+    document.getElementById('res-tab').classList.add('active');
+  } else if (key === 'form') {
+    document.querySelectorAll('.tab-btn')[2].classList.add('active');
+    document.getElementById('form-tab').classList.add('active');
+  }
+}
+window.addEventListener('DOMContentLoaded', () => initLesson({"day": 22, "date": "Oct 1 (Thursday)", "course": "English 11: American Literature", "unit": "Unit 5: The Voice of Revolution", "topic": "Allegorical Reflection: History as a Mirror", "primary_focus": "Investigating how playwrights and authors utilize historical settings to critique contemporary social issues.", "core_objectives": ["Analyzing allegorical resonance and structural parallels between colonial panics and modern political tensions."], "standards": ["11.1.6.2", "11.1.6.3"], "bellringers": ["Why might a writer set a story in the distant past to talk about a current problem?", "What is an allegory, and how does it function in literature?", "How can historical events act as a 'mirror' to reflect contemporary political issues?", "Give an example of a play, book, or movie that uses historical settings to critique modern times."], "slides": [{"title": "Understanding Literary Allegory", "standard": "11.1.6.2", "bullets": ["An allegory uses characters and events to represent broader moral or political ideas.", "Writers use historical settings to safely critique contemporary political repression.", "Arthur Miller used 1692 Salem in The Crucible to critique 1950s McCarthyism."], "callout": "Allegory provides a safe distance to critique dangerous contemporary politics."}, {"title": "Historical Context: Arthur Miller & The Red Scare", "standard": "11.1.6.2", "bullets": ["The 1950s Cold War created intense fear of Communist infiltration in America.", "HUAC demanded citizens testify and name suspected political subversives.", "Refusing to name names resulted in blacklisting, career destruction, or prison."], "callout": "McCarthyism recreated the witch-hunting logic of colonial Salem in modern America."}, {"title": "Examining Sources: Historical Settings as a Mirror", "standard": "11.1.6.3", "bullets": ["Review the Salem vs. HUAC chart and the Bill of Rights Decoder in the Resource Hub.", "Identify structural parallels: fear-mongering, unsubstantiated claims, coerced confessions.", "Analyze how power structures maintain authority by generating public hysteria."], "callout": "History mirrors present reality whenever public fear overrides legal protections."}, {"title": "Structural Parallels: Salem 1692 vs. HUAC 1953", "standard": "11.1.6.2", "bullets": ["Spectral evidence in Salem corresponds to anonymous accusations in HUAC hearings.", "Demands to 'name other witches' match demands to 'name suspected Communists'.", "In both eras, guilt was presumed upon accusation without tangible proof."], "callout": "The structural anatomy of a political panic remains remarkably constant across centuries."}, {"title": "Why History Acts as a Safe Mirror", "standard": "11.1.6.3", "bullets": ["Direct critique of current leaders often faces immediate censorship or retaliation.", "A historical setting allows audiences to examine human behavior objectively.", "Once the pattern is recognized in history, audiences see it in their own time."], "callout": "Distance allows readers to evaluate injustice without immediate partisan bias."}, {"title": "Character Parallels as Allegorical Tools", "standard": "11.1.6.2", "bullets": ["Judge Danforth mirrors rigid Cold War politicians holding dogmatic power.", "Abigail Williams represents opportunists who weaponize panic for personal gain.", "John Proctor reflects individuals refusing to betray conscience to save themselves."], "callout": "Allegorical characters represent recurring human archetypes in political crises."}, {"title": "Analyzing the Concept of 'The Crucible'", "standard": "11.1.6.3", "bullets": ["A crucible is a vessel used to melt substances at high heat to test purity.", "Metaphorically, political panics serve as crucibles testing individual integrity.", "Extreme pressure forces characters—and citizens—to reveal their true nature."], "callout": "Severe societal pressure strips away pretense, revealing fundamental human character."}, {"title": "Applying Allegorical Analysis Beyond Salem", "standard": "11.1.6.2", "bullets": ["Examine other allegorical works in American literature (e.g., Animal Farm, Fahrenheit 451).", "Identify how authors disguise contemporary critiques in fantasy or history.", "Trace how allegories retain universal relevance long after the original crisis ends."], "callout": "Great allegories transcend their original context to speak to future generations."}, {"title": "Comparative Chart Activity", "standard": "11.1.6.3", "bullets": ["Map specific quotes from The Crucible against 1950s Congressional transcripts.", "Highlight identical rhetorical tricks used to compel compliance and fear.", "Evaluate how fear of an invisible enemy (witches/communists) disables reason."], "callout": "Rhetorical manipulation relies on fear of unseen, existential enemies."}, {"title": "Modern Allegorical Reflections", "standard": "11.1.6.3", "bullets": ["Discuss contemporary panics driven by digital media and viral misinformation.", "Evaluate whether modern society is susceptible to witch-hunt dynamics.", "Brainstorm how creators today use allegory to critique 21st-century issues."], "callout": "Understanding allegory equips citizens to spot modern witch-hunts early."}, {"title": "Group Synthesis: History as Mirror", "standard": "11.1.6.2", "bullets": ["Synthesize your findings from the Salem vs. HUAC chart and the Bill of Rights Decoder.", "Formulate thesis statements on how playwrights use historical allegory.", "Prepare preliminary thoughts for tomorrow's culminative Socratic seminar."], "callout": "Allegory is the ultimate literary bridge connecting history, literature, and civic duty."}, {"title": "Daily Wrap-Up and Form Completion", "standard": "11.1.6.3", "bullets": ["Review core allegorical concepts and structural parallels.", "Complete the Day 22 10-field assessment form on allegorical reflection.", "Prepare your Socratic seminar notes for tomorrow's discussion."], "callout": "Tomorrow we bridge Faith and Enlightenment in our Socratic Seminar."}], "resources": [{"title": "Bill of Rights Decoder: Amendments 4-6 in Plain Language", "tag": "Generated study aid", "description": "The original wording next to a student-friendly paraphrase, linked to Salem and HUAC. Read the full text of all ten amendments in the National Archives link below.", "html": "<table class='gen-table'><thead><tr><th>Amendment</th><th>Original wording (excerpt)</th><th>In plain language</th><th>Salem / HUAC connection</th></tr></thead><tbody><tr><td>4th</td><td>The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated...</td><td>The government cannot search you or your belongings without good reason and a warrant.</td><td>HUAC and the blacklist dug into people's associations and private lives with little proof.</td></tr><tr><td>5th</td><td>No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury... nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law...</td><td>You can't be charged without a formal process, you can't be forced to incriminate yourself, and you can't lose your freedom or life without fair legal procedures.</td><td>Salem and HUAC both pressured people to confess and name others. This amendment exists to stop that.</td></tr><tr><td>6th</td><td>In all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury... and to be confronted with the witnesses against him...</td><td>If accused of a crime, you get a prompt, public, fair trial and the right to face and question your accusers.</td><td>Salem's accusers testified to unseen spirits, and HUAC used anonymous accusations. Neither allowed real confrontation of evidence.</td></tr></tbody></table><p class='gen-note'>Think: why might the Framers, who knew about Salem-style trials, have written these protections down?</p>"}, {"title": "Salem vs. HUAC: Parallel Chart", "tag": "Generated study aid", "description": "Side-by-side comparison of the two panics. Open to view and print.", "html": "<table class='gen-table'><thead><tr><th>Feature of the panic</th><th>Salem, 1692</th><th>HUAC / McCarthyism, 1950s</th></tr></thead><tbody><tr><td>Hidden enemy</td><td>Witches serving the Devil</td><td>Communists secretly infiltrating America</td></tr><tr><td>Evidence</td><td>Spectral evidence: accusers claim to see spirits</td><td>Anonymous accusations, guilt by association</td></tr><tr><td>Demand placed on the accused</td><td>Confess and name other witches</td><td>Testify and name suspected Communists</td></tr><tr><td>Cost of refusing</td><td>Imprisonment or execution</td><td>Blacklisting, lost careers, prison</td></tr><tr><td>Who gains power</td><td>Accusers and court officials</td><td>Investigators and politicians</td></tr></tbody></table><p class='gen-note'>Ask yourself: which row shows the strongest parallel, and why would Miller choose to make it visible?</p>"}, {"title": "Allegory Decoder: Characters as Archetypes", "tag": "Generated study aid", "description": "Connect The Crucible's characters to the real-world figures and patterns they represent.", "html": "<table class='gen-table'><thead><tr><th>Character</th><th>Archetype</th><th>1950s echo</th><th>Modern question</th></tr></thead><tbody><tr><td>Judge Danforth</td><td>Rigid authority</td><td>Cold War politicians defending dogma</td><td>Who refuses to admit a system may be wrong?</td></tr><tr><td>Abigail Williams</td><td>Opportunist</td><td>Those who used panic for personal gain</td><td>Who benefits when fear spreads?</td></tr><tr><td>John Proctor</td><td>Conscience under pressure</td><td>Witnesses who refused to name names</td><td>What would you risk to stay honest?</td></tr></tbody></table>"}, {"title": "Standard 11.1.6.3 Mastery Guide", "tag": "Generated study aid", "description": "What each self-assessment level looks like, with sentence starters for your evidence.", "html": "<ul class='gen-list'><li><strong>4 - Mastering:</strong> I can explain how a historical setting works as a mirror AND support it with a specific Salem/HUAC example.</li><li><strong>3 - Secure:</strong> I can explain the mirror idea and give a general example.</li><li><strong>2 - Developing:</strong> I understand part of the idea but need help connecting it to a real example.</li><li><strong>1 - Beginning:</strong> I need the idea explained again.</li></ul><p class='gen-note'>Sentence starters: 'Miller uses 1692 Salem to show...' / 'This mirrors the 1950s because...' / 'The distance of history lets readers...'</p>"}, {"title": "Salem Witch Trials Documentary Archive (University of Virginia)", "tag": "Primary sources", "description": "Searchable 1692 court records, depositions, and examinations. Read an accusation and compare it to HUAC testimony.", "url": "https://salem.lib.virginia.edu/home.html"}, {"title": "The Bill of Rights: Full Text of Amendments 1-10 (National Archives)", "tag": "Founding document", "description": "Official transcription with every amendment written out. Focus on the Fifth Amendment (no forced self-incrimination, due process) and the Sixth (a fair trial and the right to confront accusers).", "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript"}], "form": [{"field_id": "q1", "label": "What is the primary purpose of a literary allegory?", "type": "multiple_choice", "options": ["To use characters and events to represent broader moral, social, or political ideas", "To provide an exact verbatim historical record of past events", "To teach technical grammar rules through fictional stories", "To entertain children with simple fairy tales"], "correct_answer": "To use characters and events to represent broader moral, social, or political ideas"}, {"field_id": "q2", "label": "Why did Arthur Miller set The Crucible in 1692 Salem rather than 1950s Washington?", "type": "short_answer", "prompt": "Explain why Miller used a historical setting to critique McCarthyism.", "correct_answer": "Using a historical setting provided distance to critique 1950s McCarthyism safely and objectively without immediate censorship."}, {"field_id": "q3", "label": "Which modern 1950s historical movement was directly critiqued through The Crucible?", "type": "multiple_choice", "options": ["McCarthyism and the Red Scare", "The Women's Suffrage Movement", "The Industrial Revolution", "The Great Depression relief programs"], "correct_answer": "McCarthyism and the Red Scare"}, {"field_id": "q4", "label": "True or False: In both Salem 1692 and HUAC in the 1950s, accused individuals were expected to confess and name others.", "type": "true_false", "correct_answer": "True"}, {"field_id": "q5", "label": "What does the literal term 'crucible' mean, and how does it function metaphorically?", "type": "short_answer", "prompt": "Define 'crucible' literally and metaphorically.", "correct_answer": "Literally a severe heat-resistant container for melting metals; metaphorically a severe test that reveals true character."}, {"field_id": "q6", "label": "Which amendment protects people from being forced to testify against themselves, the very pressure Salem and HUAC witnesses faced?", "type": "multiple_choice", "options": ["First Amendment", "Fourth Amendment", "Fifth Amendment", "Eighth Amendment"], "correct_answer": "Fifth Amendment"}, {"field_id": "q7", "label": "Identify one structural parallel between the Salem witch trials and anti-communist hearings.", "type": "short_answer", "prompt": "Describe one similarity in how trials were conducted in both eras.", "correct_answer": "Presumption of guilt upon accusation, reliance on unsubstantiated evidence, and demanding names of co-conspirators."}, {"field_id": "q8", "label": "Which standard focuses on evaluating structural parallels and authorial intent?", "type": "multiple_choice", "options": ["11.1.6.2", "11.1.6.3", "6.2.1.1", "10.1.1.2"], "correct_answer": "11.1.6.2"}, {"field_id": "q9", "label": "How do allegories maintain relevance long after their specific political context has passed?", "type": "short_answer", "prompt": "Explain why allegories like The Crucible are still read today.", "correct_answer": "They address timeless, universal patterns of human behavior, fear, power, and moral integrity."}, {"field_id": "q10", "label": "Standard 11.1.6.3 Self-Assessment: Can you explain how history acts as a mirror?", "type": "self_assessment", "standard": "11.1.6.3", "standard_title": "History as a Mirror", "i_can": "I can explain how an author uses a historical setting to comment on present-day issues, and why that distance helps readers see the issue clearly.", "look_fors": ["I can say what the historical setting is (Salem, 1692).", "I can say what present issue it mirrors (HUAC and McCarthyism, 1950s).", "I can explain how the distance of history makes the critique safer and clearer."], "levels": [{"value": "4", "title": "4 - Mastering", "desc": "I can explain it and support it with specific evidence, and could teach it to someone else."}, {"value": "3", "title": "3 - Secure", "desc": "I can explain it with a general example."}, {"value": "2", "title": "2 - Developing", "desc": "I understand part of it but need help connecting it to an example."}, {"value": "1", "title": "1 - Beginning", "desc": "I need this explained again."}], "prompt": "Show your evidence: How does viewing history as a 'mirror' help citizens navigate modern political panics?", "evidence_hint": "Pick your level first, then back it up in 2-4 sentences. See the Mastery Guide in the Resource Hub for sentence starters.", "correct_answer": "It helps citizens recognize patterns of fear-mongering and institutional overreach before rights are eroded."}]}));
+</script>
+</body>
+</html>
